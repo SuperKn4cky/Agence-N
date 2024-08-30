@@ -78,24 +78,14 @@ L'agence N souhaite numériser son système de gestion des notes de frais et des
 
 ### Avec Docker
 
-1. Construire les services :  
-   ```bash
-   docker compose build
-   ```
-
-2. Démarrer les services :  
+1. Démarrer les services :  
    ```bash
    docker compose up -d
    ```
 
-3. Exécuter le script d'initialisation :  
+2. Remplir la base de donné :  
    ```bash
-   docker exec -it [nom_du_conteneur_php probably agence-n-www-1] bash /var/www/symfony/init.sh
-   ```
-
-4. Lancer le serveur Symfony :  
-   ```bash
-   php -S 0.0.0.0:8000 -t public
+   php bin/console doctrine:fixtures:load
    ```
 
 ---
