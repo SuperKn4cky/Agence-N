@@ -13,7 +13,7 @@ services:
     image: phpmyadmin
     restart: always
     ports:
-      - "8085:80"
+      - "8001:80"
     environment:
       - PMA_ARBITRARY=1
     depends_on:
@@ -21,20 +21,18 @@ services:
     networks:
       - singe
   www:
-    build:
-      context: .
-      dockerfile: php/Dockerfile
-      args:
-        TIMEZONE: "Europe/Paris"
+    image: warden696/php:fpm-alpine3.20-latest
     ports:
-      - "8081:8000"
+      - "8000:8000"
     volumes:
       - .:/var/www/symfony:cached
     networks:
       - singe
+    entrypoint: [ "/bin/sh", "-c", "chmod +x /var/www/symfony/init.sh && /var/www/symfony/init.sh && php-fpm" ]
 
 volumes:
   db-data:
+
 
 networks:
   singe:
