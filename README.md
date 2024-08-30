@@ -88,6 +88,9 @@ L'agence N souhaite numériser son système de gestion des notes de frais et des
    php bin/console doctrine:fixtures:load
    ```
 
+3. App sur http://localhost:8000/
+   PhpMyAdmin sur http://localhost:8001/
+
 ---
 
 ## Étapes Préliminaires

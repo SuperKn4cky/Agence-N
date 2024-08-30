@@ -1,4 +1,5 @@
 <?php
+
 namespace App\DataFixtures;
 
 use App\Entity\User;
@@ -20,12 +21,12 @@ class AppFixtures extends Fixture
     {
         $user = new User();
         $user->setEmail('admin@admin.com');
-        $user->setRoles(['ROLE_ADMIN']); // Assurez-vous d'utiliser le bon rôle
+        $user->setRoles(['ROLE_ADMIN']);
         $user->setNom('admin');
         $user->setPrenom('Administrateur');
         $encodedPassword = $this->hasher->hashPassword($user, 'admin123');
         $user->setPassword($encodedPassword);
- 
+
         $manager->persist($user);
         $manager->flush();
     }

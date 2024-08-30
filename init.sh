@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Initialisation du conteneur pour la première fois..."
-
 echo "Installation des dépendances Composer..."
 composer install --no-interaction --prefer-dist --optimize-autoloader
 
