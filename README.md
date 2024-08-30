@@ -88,8 +88,8 @@ L'agence N souhaite numériser son système de gestion des notes de frais et des
    php bin/console doctrine:fixtures:load
    ```
 
-3. - App sur http://localhost:8000/ avec login défini dans `src/DataFixtures/AppFixtures.php`
-   - PhpMyAdmin sur http://localhost:8001/ avec server: db et login défini dans `.env` par défaut utilisateur: root, mot de passe: root
+3. - App sur http://localhost:8000/ avec login défini dans le fichier `src/DataFixtures/AppFixtures.php`
+   - PhpMyAdmin sur http://localhost:8001/ avec server: db et login défini dans le fichier `.env` par défaut utilisateur: root, mot de passe: root
 
 ---
 
